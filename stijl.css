@@ -1,0 +1,143 @@
+/* Een header met een grote tekst en als afbeelding een mooie foto.
+ * Het midden van de foto blijft altijd het midden van de header.
+ * De hoogte en onderste marge zijn percentages van de viewporthoogte (gevonden op internet) */
+header {
+    background: url(lent.jpeg) no-repeat center center;
+    width: 100%;
+    height: 30vh;
+    background-size: cover;
+    margin-bottom: 2vh;
+}
+
+h1 {
+    font-family: Limelight-Regular;
+    font-size: 25vh;
+    color: white;
+    text-align: center;
+    margin: 0;
+}
+
+@media only screen and (max-width:768px) {
+
+    /* Bij een smal scherm moeten de header en de tekst erin minder hoog worden. */
+    header {
+        height: 15vh;
+    }
+
+    h1 {
+        font-size: 10vh;
+    }
+
+    /* Omdat de rechterkolom bij een smal scherm naar onderen verschuift,
+     * moet hij een kleine marge hebben aan de bovenkant */
+    div.netjesrechts {
+        margin-top: 8px;
+    }
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    color: black;
+}
+
+/* De standaard was float: left, maar dan blijft er rechts een stuk ruimte over
+ * (de opdracht zegt 2 kolombreedtes links en 9 rechts, dat is 11 in totaal en dus niet de volle 12) */
+div.netjesrechts {
+    float: right;
+    background-color: pink;
+    padding-top: 8px;
+}
+
+.artikel {
+    display: inline-block; /* Anders deed de achtergrond het niet */
+    margin-bottom: 8px;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    padding-top: 8px;
+}
+
+.linksvanafbeelding {
+    float: left;
+    width: 66%;
+}
+
+img {
+    width: 33%;
+    float: right;
+}
+
+table {
+    border-spacing: 0;
+}
+
+td {
+    width: auto;
+    vertical-align: top;
+    padding: 8px;
+}
+
+/* Fluid grid spullen */
+[class*="col-"] {
+    float: left;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+@media only screen and (min-width: 768px) {
+    .col-1 {
+        width: 8.33%;
+    }
+
+    .col-2 {
+        width: 16.66%;
+    }
+
+    .col-3 {
+        width: 25%;
+    }
+
+    .col-4 {
+        width: 33.33%;
+    }
+
+    .col-5 {
+        width: 41.66%;
+    }
+
+    .col-6 {
+        width: 50%;
+    }
+
+    .col-7 {
+        width: 58.33%;
+    }
+
+    .col-8 {
+        width: 66.66%;
+    }
+
+    .col-9 {
+        width: 75%;
+    }
+
+    .col-10 {
+        width: 83.33%;
+    }
+
+    .col-11 {
+        width: 91.66%;
+    }
+
+    .col-12 {
+        width: 100%;
+    }
+}
